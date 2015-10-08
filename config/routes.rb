@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  get 'readings/index'
+
+  get 'readings/show'
+
+  get 'readings/new'
+
+  get 'scenarios/index'
+
+  get 'scenarios/show'
+
+  get 'scenarios/new'
+
+  get 'chapters/index'
+
+  get 'chapters/show'
+
+  get 'chapters/new'
+
+  get 'stories/index'
+
+  get 'stories/show'
+
+  get 'stories/new'
+
   get 'welcome/index'
 
    devise_for :users, controllers: {
