@@ -1,2 +1,6 @@
-<h1>Chapters#index</h1>
-<p>Find me in app/views/chapters/index.html.erb</p>
+<h1>Chapters Index</h1>
+<% @chapters.each do |chapter| %>
+  <h2><%= chapter.number %></h2>
+<br>
+  <%= link_to "Read Chapter", chapter %>
+<% end %>
