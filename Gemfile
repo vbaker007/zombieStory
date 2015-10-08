@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'devise', '~> 3.5.2'
+gem 'paperclip'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
