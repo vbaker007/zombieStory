@@ -32,6 +32,8 @@ class ChaptersController < ApplicationController
   end
 
   def destroy
+    @chapter.destroy
+    redirect_to root_path
   end
 
   private
