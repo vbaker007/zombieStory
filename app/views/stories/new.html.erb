@@ -1,2 +1,8 @@
-<h1>Stories#new</h1>
-<p>Find me in app/views/stories/new.html.erb</p>
+<h1>New Story</h1>
+<% form_for @story do |f| %>
+
+<%= f.label :story %>
+<%= f.text_area :story %>
+<br>  <% f.submit %>
+<% end %> 
+

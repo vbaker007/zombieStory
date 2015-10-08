@@ -1,2 +1,16 @@
-<h1>Readings#new</h1>
-<p>Find me in app/views/readings/new.html.erb</p>
+<h1>New Reading</h1>
+<% form_for @reading do |f| %>
+  <%= f.label :story_id %>
+  <%= f.integer :story_id %>
+<br>
+  <%= f.label :chapter_id %>
+  <%= f.integer :chapter_id %>
+<br>
+  <%= f.label :scenario_id %>
+  <%= f.integer :scenario_id %>
+<br>
+  <%= f.label :complete %>
+  <%= f.boolean :complete %>
+<br>
+  <%= f.submit %>
+<% end %>

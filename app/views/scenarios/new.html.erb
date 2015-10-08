@@ -1,2 +1,8 @@
-<h1>Scenarios#new</h1>
-<p>Find me in app/views/scenarios/new.html.erb</p>
+<h1>New Scenario</h1>
+<% form_for @scenario do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+<br>
+<%= f.submit %>
+<% end %> 
+

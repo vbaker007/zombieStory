@@ -1,2 +1,7 @@
-<h1>Chapters#new</h1>
-<p>Find me in app/views/chapters/new.html.erb</p>
+<h1>New Chapter</h1>
+<% form_for @chapter do |f| %>
+ <%= f.label :number %>
+ <%= f.text_field :number %>
+<% end %>
+
+ 
