@@ -1,29 +1,33 @@
 Rails.application.routes.draw do
-  get 'readings/index'
+  resources :stories
+  resources :chapters
+  resources :scenarios
+  resources :readings
+  #get 'readings/index'
 
-  get 'readings/show'
+  #get 'readings/show'
 
-  get 'readings/new'
+  #get 'readings/new'
 
-  get 'scenarios/index'
+  #get 'scenarios/index'
 
-  get 'scenarios/show'
+  #get 'scenarios/show'
 
-  get 'scenarios/new'
+  #get 'scenarios/new'
 
-  get 'chapters/index'
+  #get 'chapters/index'
 
-  get 'chapters/show'
+  #get 'chapters/show'
 
-  get 'chapters/new'
+  #get 'chapters/new'
 
-  get 'stories/index'
+  #get 'stories/index'
 
-  get 'stories/show'
+  #get 'stories/show'
 
-  get 'stories/new'
+  #get 'stories/new'
 
-  get 'welcome/index'
+  #get 'welcome/index'
 
    devise_for :users, controllers: {
         sessions: 'users/sessions'
