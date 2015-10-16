@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/index'
+
+  #match 'auth/:provider/callback', to:'sessions#create'
+  #match 'auth/failure', to: redirect('/')
+  #match 'signout', to: 'sessions#destroy', as:'signout'
+  
   resources :stories
   resources :chapters
   resources :scenarios
@@ -29,13 +35,19 @@ Rails.application.routes.draw do
 
   #get 'welcome/index'
 
-   devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
+  #get 'auth/:provider/callback', to: 'sessions#create'
+  #get 'auth/failure', to: redirect('/')
+  #get 'signout', to: 'sessions#destroy', as: 'signout'
+
+   #devise_for :users, controllers: {
+        #sessions: 'users/sessions'
+      #}
     # end
-
+ 
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # devise_for :users
-
+#delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+#end
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
