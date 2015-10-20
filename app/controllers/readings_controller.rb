@@ -16,7 +16,7 @@ class ReadingsController < ApplicationController
     if @reading.save
       redirect_to @reading
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class ReadingsController < ApplicationController
     if @reading.update(reading_params)
       redirect_to @reading
     else
-      render 'edit'
+      render :edit
     end
   end
 

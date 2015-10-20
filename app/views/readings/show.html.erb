@@ -1,2 +1,7 @@
-<h1>Readings#show</h1>
-<p>Find me in app/views/readings/show.html.erb</p>
+<h1>Readings</h1>
+<h2><%= @reading.story_id %></h2>
+<h2><%= @reading.chapter_id %></h2>
+<h2><%= @reading.scenario_id %></h2>
+<h2><%= @reading.complete %></h2>
+
+<%= link_to 'Back', readings_path %>

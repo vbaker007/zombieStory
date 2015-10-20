@@ -1,2 +1,9 @@
-<h1>Stories#show</h1>
-<p>Find me in app/views/stories/show.html.erb</p>
+<h1>Stories</h1>
+
+<h2><%= @story.title %></h2>
+<h2><%= @story.desc %></h2>
+<h2><%= @story.base_text %></h2>
+<h2><%= @story.image %></h2>
+
+
+<%= link_to 'Back', stories_path %>

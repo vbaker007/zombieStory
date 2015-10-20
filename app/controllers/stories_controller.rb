@@ -13,10 +13,11 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
+    
     if @story.save
       redirect_to @story
     else 
-      render 'new'
+      render :new
     end
   end
 
@@ -27,7 +28,7 @@ class StoriesController < ApplicationController
     if @story.update(story_params)
       redirect_to @story
     else
-      render 'edit'
+      render :edit
     end
   end
 

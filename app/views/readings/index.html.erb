@@ -1,15 +1,17 @@
 <h1>Readings Index</h1>
-
+<p><%= link_to "Post New Reading", new_reading_path %></p>
 <% @readings.each do |reading| %>
-<h2><%= reading.story_id %></h2>
+<h3><%= reading.story_id %></h3>
 <br>
-<h2><%= reading.chapter_id %></h2>
+<h3><%= reading.chapter_id %></h3>
 <br>
-<h2><%= reading.scenario_id %></h2>
+<h3><%= reading.scenario_id %></h3>
 <br>
-<h2><%= reading.complete %></h2>
+<h3><%= reading.complete %></h3>
 <br>
-<% link_to "Select Reading", reading %>
-
+  <% link_to 'Select Reading', reading_path(reading) %>
+  <%= link_to 'Edit Reading', edit_reading_path(reading) %>
+  <%= link_to 'Destroy Reading', reading, method: :delete %>
 <% end %>
+
 

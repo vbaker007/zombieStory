@@ -1,2 +1,11 @@
-<h1>Scenarios#index</h1>
-<p>Find me in app/views/scenarios/index.html.erb</p>
+<h1>Scenarios Index</h1>
+<p><%= link_to "Post New Scenario", new_scenario_path %></p>
+<% @scenarios.each do |scenario| %>
+<div><h3><i><%= truncate(scenario.content, :length => 35) %></i></h3></div>
+<br>
+  <%= link_to "Read Scenario", scenario %>
+  <%= link_to 'Select a Scenario', scenario_path(scenario) %>
+  <%= link_to 'Edit Scenario', edit_scenario_path(scenario) %>
+  <%= link_to 'Destroy Scenario', scenario, method: :delete %>
+<% end %>
+

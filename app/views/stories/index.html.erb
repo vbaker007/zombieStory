@@ -1,2 +1,18 @@
-<h1>Stories#index</h1>
-<p>Find me in app/views/stories/index.html.erb</p>
+<h1>Stories Index</h1>
+<p><%= link_to "Post New Story", new_story_path %></p>
+<% @stories.each do |story| %>
+<h2><%= story.title %></h2>
+<br>
+<h3><%= story.desc %></h3>
+<br>
+<div><h3><i><%= truncate(story.base_text, :length => 35) %></i></h3></div>
+<br>
+<h1><%= story.image %></h1>
+
+<br>
+  <%= link_to "Read Story", story %>
+  <%= link_to 'Select Story', story_path(story) %>
+  <%= link_to 'Edit Story', edit_story_path(story) %>
+  <%= link_to 'Destroy Story', story, method: :delete %>
+<% end %>
+

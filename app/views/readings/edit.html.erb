@@ -1,4 +1,4 @@
-<h1>New Reading</h1>
+<h1>Edit Reading</h1>
 <%= form_for @reading do |f| %>
   <%= f.label :story_id %>
   <%= f.number_field :story_id %>
@@ -9,8 +9,6 @@
   <%= f.label :scenario_id %>
   <%= f.number_field :scenario_id %>
 <br>
-
-  
   <%= f.radio_button :complete, 'Reading' %>
 <br>
   <%= f.submit %>

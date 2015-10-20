@@ -1,6 +1,9 @@
 <h1>Chapters Index</h1>
+<p><%= link_to "Post New Chapter", new_chapter_path %></p>
 <% @chapters.each do |chapter| %>
-  <h2><%= chapter.number %></h2>
+  <h3><%= chapter.number %></h3>
 <br>
-  <%= link_to "Read Chapter", chapter %>
+  <%= link_to 'Select Chapter', chapter_path(chapter) %>
+  <%= link_to 'Edit Chapter', edit_chapter_path(chapter) %>
+  <%= link_to 'Destroy Chapter', chapter, method: :delete %>
 <% end %>
