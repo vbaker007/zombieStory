@@ -1,7 +1,7 @@
 <h1>Chapters Index</h1>
 <p><%= link_to "Post New Chapter", new_chapter_path %></p>
 <% @chapters.each do |chapter| %>
-  <h3><%= chapter.number %></h3>
+  <h5><%= chapter.number %></h5>
 <br>
   <%= link_to 'Select Chapter', chapter_path(chapter) %>
   <%= link_to 'Edit Chapter', edit_chapter_path(chapter) %>
