@@ -1,13 +1,13 @@
-<h1>Readings Index</h1>
+<h3><i>Featured Readings</i></h3>
 <p><%= link_to "Post New Reading", new_reading_path %></p>
 <% @readings.each do |reading| %>
-<h5><%= reading.story_id %></h5>
+<h6><%= reading.story_id %></h6>
 <br>
-<h5><%= reading.chapter_id %></h5>
+<h6><%= reading.chapter_id %></h6>
 <br>
-<h5><%= reading.scenario_id %></h5>
+<h6><%= reading.scenario_id %></h6>
 <br>
-<h5><%= reading.complete %></h5>
+<h6><%= reading.complete %></h6>
 <br>
   <% link_to 'Select Reading', reading_path(reading) %>
   <%= link_to 'Edit Reading', edit_reading_path(reading) %>

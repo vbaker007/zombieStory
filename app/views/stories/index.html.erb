@@ -1,13 +1,13 @@
-<h1>Stories Index</h1>
+<h3><i>Featured Stories</i></h3>
 <p><%= link_to "Post New Story", new_story_path %></p>
 <% @stories.each do |story| %>
-<h2><%= story.title %></h2>
+<h5><%= story.title %></h5>
 <br>
-<h3><%= story.desc %></h3>
+<h6><%= story.desc %></h6>
 <br>
-<div><h3><i><%= truncate(story.base_text, :length => 35) %></i></h3></div>
+<div><h6><i><%= truncate(story.base_text, :length => 35) %></i></h6></div>
 <br>
-<h1><%= story.image %></h1>
+<h5><%= story.image %></h5>
 
 <br>
   <%= link_to "Read Story", story %>
