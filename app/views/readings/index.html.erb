@@ -1,17 +1,27 @@
 <h3><i>Featured Readings</i></h3>
-<p><%= link_to "Post New Reading", new_reading_path %></p>
-<% @readings.each do |reading| %>
-<h6><%= reading.story_id %></h6>
-<br>
-<h6><%= reading.chapter_id %></h6>
-<br>
-<h6><%= reading.scenario_id %></h6>
-<br>
-<h6><%= reading.complete %></h6>
-<br>
-  <% link_to 'Select Reading', reading_path(reading) %>
-  <%= link_to 'Edit Reading', edit_reading_path(reading) %>
-  <%= link_to 'Destroy Reading', reading, method: :delete %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Story id</th>
+      <th>Chapter id</th>
+      <th>Scenario id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @readings.each do |reading| %>
+    <tr>
+      <td><%= reading.story_id %></td>
+      <td><%= reading.chapter_id %></td>
+      <td><%= reading.scenario_id %></td>
+      <td><%= reading.complete %></td>
+      <td><%= link_to 'Select Reading', reading_path(reading) %></td>
+      <td><%= link_to 'Edit Reading', edit_reading_path(reading) %></td>
+      <td><%= link_to 'Destroy Reading', reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  </tbody>
+</table>
 <% end %>
+<br>
 
-
+<p><%= link_to "Post New Reading", new_reading_path %></p>

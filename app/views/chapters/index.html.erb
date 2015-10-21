@@ -1,9 +1,24 @@
 <h3><i>Featured Chapters</i></h3>
-<p><%= link_to "Post New Chapter", new_chapter_path %></p>
-<% @chapters.each do |chapter| %>
-  <h6><%= chapter.number %></h6>
-<br>
-  <%= link_to 'Select Chapter', chapter_path(chapter) %>
-  <%= link_to 'Edit Chapter', edit_chapter_path(chapter) %>
-  <%= link_to 'Destroy Chapter', chapter, method: :delete %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Chapter Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @chapters.each do |chapter| %>
+    <tr>
+      <td><%= chapter.number %></td>
+      <td><%= link_to 'Select Chapter', chapter_path(chapter) %></td>
+      <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
+      <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  </tbody>
+</table>
+
 <% end %>
+
+<br>
+
+<p><%= link_to "Post New Chapter", new_chapter_path %></p>

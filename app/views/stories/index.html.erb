@@ -1,18 +1,31 @@
 <h3><i>Featured Stories</i></h3>
-<p><%= link_to "Post New Story", new_story_path %></p>
-<% @stories.each do |story| %>
-<h5><%= story.title %></h5>
-<br>
-<h6><%= story.desc %></h6>
-<br>
-<div><h6><i><%= truncate(story.base_text, :length => 35) %></i></h6></div>
-<br>
-<h5><%= story.image %></h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>desc</th>
+      <th>Base Text</th>
+      <th colspan="3"</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stories.each do |story| %>
+      <tr>
+        <td><%= story.title %></td>
+        <td><%= story.desc %></td>
+        <td><i><%= truncate(story.base_text, :length => 35) %></i></td>
+        <td><%= image_tag story.image.url(:thumb) %></td>
+        <td><%= link_to 'Read Story', story %></td>
+        <td><%= link_to 'Edit Story', edit_story_path(story) %></td>
+        <td><%= link_to 'Destroy Story', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
-  <%= link_to "Read Story", story %>
-  <%= link_to 'Select Story', story_path(story) %>
-  <%= link_to 'Edit Story', edit_story_path(story) %>
-  <%= link_to 'Destroy Story', story, method: :delete %>
-<% end %>
+<%= link_to 'Create Story', new_story_path %>
+
+
 

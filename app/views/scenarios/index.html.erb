@@ -1,11 +1,33 @@
 <h3><i>Featured Scenarios</i></h3>
-<p><%= link_to "Post New Scenario", new_scenario_path %></p>
-<% @scenarios.each do |scenario| %>
-<div><h6><i><%= truncate(scenario.content, :length => 35) %></i></h6></div>
-<br>
-  <%= link_to "Read Scenario", scenario %>
-  <%= link_to 'Select a Scenario', scenario_path(scenario) %>
-  <%= link_to 'Edit Scenario', edit_scenario_path(scenario) %>
-  <%= link_to 'Destroy Scenario', scenario, method: :delete %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scenario Content</th>
+      <th colspan="3"<th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @scenarios.each do |scenario| %>
+      <tr>
+        <td><i><%= truncate(scenario.content, :length => 35) %></i></td>
+        <td><%= link_to "Read Scenario", scenario %></td>
+        <td><%= link_to 'Select Scenario', scenario_path(scenario) %></td>
+        <td><%= link_to 'Edit Scenario', edit_scenario_path(scenario) %></td>
+        <td><%= link_to 'Destroy Scenario', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
+
 <% end %>
+
+<br>
+
+<%= link_to 'Create a New Scenario', new_scenario_path %>
+
+
+
+
+
+
 

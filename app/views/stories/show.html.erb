@@ -1,9 +1,21 @@
 <h3><i>Stories</i></h3>
-
-<h5><%= @story.title %></h5>
-<h6><%= @story.desc %></h6>
+<p id="notice"><%= notice %></p>
+<p>
+<strong>Title:</strong>
+  <%= @story.title %>
+</P>
+<p>
+<em>desc:</em>
+  <%= @story.desc %>
+</p>
+<p>
+  <%= image_tag @story.image.url(:medium) %>
+  <%= @story.image %>
+</p>
+<p>
+  <strong>Base_text:</strong>
 <h6><%= @story.base_text %></h6>
-<h6><%= @story.image %></h6>
+</p>
 
-
+<%= link_to 'Edit Story', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>
