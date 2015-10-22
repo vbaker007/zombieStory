@@ -1,4 +1,9 @@
 <h3><i>Chapters</i></h3>
-<h6><%= @chapter.number %></h6>
-
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Chapter Number:</strong>
+  <h6><%= @chapter.number %></h6>
+</p>
+<br>
+<%= link_to 'Edit Chapter', edit_chapter_path(@chapter) %>
 <%= link_to 'Back', chapters_path %>
