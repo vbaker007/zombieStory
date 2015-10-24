@@ -33,7 +33,7 @@ class ReadingsController < ApplicationController
 
   def destroy
     @reading.destroy
-    redirect_to root_path
+    redirect_to readings_path
   end
 
   private

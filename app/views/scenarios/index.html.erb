@@ -16,10 +16,11 @@
         <td><%= link_to 'Edit Scenario', edit_scenario_path(scenario) %></td>
         <td><%= link_to 'Destroy Scenario', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+  <% end %>
   </tbody>
 </table>
 
-<% end %>
+
 
 <br>
 <p><%= link_to 'Create a New Scenario', new_scenario_path %></p>

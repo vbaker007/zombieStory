@@ -14,10 +14,10 @@
       <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
       <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 
-<% end %>
 
 <br>
 <p><%= link_to "Post New Chapter", new_chapter_path %></p>

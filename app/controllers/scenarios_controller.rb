@@ -34,7 +34,7 @@ class ScenariosController < ApplicationController
 
   def destroy
     @scenario.destroy
-    redirect_to root_path
+    redirect_to scenarios_path
   end
 
   private

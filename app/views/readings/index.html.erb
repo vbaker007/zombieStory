@@ -6,6 +6,7 @@
       <th>Story id</th>
       <th>Chapter id</th>
       <th>Scenario id</th>
+      <th>Scenario: Selected?</th>
     </tr>
   </thead>
   <tbody>
@@ -17,11 +18,12 @@
       <td><%= reading.complete %></td>
       <td><%= link_to 'Select Reading', reading_path(reading) %></td>
       <td><%= link_to 'Edit Reading', edit_reading_path(reading) %></td>
-      <td><%= link_to 'Destroy Reading', reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy Reading', reading, method: :delete %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
-<% end %>
+
 
 <br>
-<p><%= link_to "Post New Reading", new_reading_path %></p>
+<p><%= link_to "Post New Reading", new_reading_path %>
