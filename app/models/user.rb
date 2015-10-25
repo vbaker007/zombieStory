@@ -24,10 +24,13 @@ class User < ActiveRecord::Base
   end
 
 
-
-
-
-
-
-
+  def update_reading(story_id, chapter_id, scenario_id, complete = true || false)
+    self.readings.each do |reading|
+      reading.story_id = story_id
+      reading.chapter_id = chapter_id
+      reading.scenario_id = scenario_id
+      reading.complete = complete
+      reading.save
+    end
+  end
 end
