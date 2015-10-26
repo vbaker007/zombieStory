@@ -1,12 +1,15 @@
 class Reading < ActiveRecord::Base
   belongs_to :user
 
-  @@scenarios = [scenario_id, scenario_id]
+  
 
   def add_scenario(scenario_id)
-    add scenario_id
+
+    scenarios = [scenario_id, scenario_id]
+    puts scenarios[0]
+    puts scenario[1]
   end
-  
+
   def select_scenario(scenario_id)
     puts @scenario_id == @complete 
     if @scenario_id == true
@@ -14,12 +17,11 @@ class Reading < ActiveRecord::Base
     else @scenario_id == false
     end
   end
- # if user
-
-
-
-
-
-
-
 end
+#add_scenario(scenarios[0])
+#add_scenario(scenarios[1])
+
+
+
+
+
