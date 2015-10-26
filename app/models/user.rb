@@ -34,3 +34,5 @@ class User < ActiveRecord::Base
     end
   end
 end
+class User < Reading
+end
