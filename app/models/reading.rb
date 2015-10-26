@@ -1,14 +1,14 @@
 class Reading < ActiveRecord::Base
   belongs_to :user
 
-  def initalize(user, scenario_id, complete = true || false)
-    @scenario_id = scenario_id
-    @user = user
-    @complete = complete 
-  end
+  @@scenarios = [scenario_id, scenario_id]
 
-  def select_scenario
-    puts @scenario_id == complete 
+  def add_scenario(scenario_id)
+    add scenario_id
+  end
+  
+  def select_scenario(scenario_id)
+    puts @scenario_id == @complete 
     if @scenario_id == true
       puts "You've selected #{@scenario_id}"
     else @scenario_id == false
