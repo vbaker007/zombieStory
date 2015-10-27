@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  
   def index
     @stories = Story.all.order("created_at DESC")
     @readings = Reading.all.order("created_at DESC")
