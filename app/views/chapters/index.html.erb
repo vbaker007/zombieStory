@@ -1,23 +1,40 @@
-<h3><i>Featured Chapters</i></h3>
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <h3><i>Featured Chapters</i></h3>
+  </head>
+<body>
 
-<table>
-  <thead>
-    <tr>
-      <th>Chapter Number</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @chapters.each do |chapter| %>
-    <tr>
-      <td><%= chapter.number %></td>
-      <td><%= link_to 'Select Chapter', chapter_path(chapter) %></td>
-      <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
-      <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<br>
-<p><%= link_to "Post New Chapter", new_chapter_path %></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Chapter Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @chapters.each do |chapter| %>
+      <tr>
+        <td><%= chapter.number %></td>
+        <td><%= link_to 'Select Chapter', chapter_path(chapter) %></td>
+        <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
+        <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <p><%= link_to "Post New Chapter", new_chapter_path %></p>
+  <br>
+<footer class="page-footer #263238 blue-grey darken-4">
+  <div class="container">
+    <div class="footer-copyright">
+      Copyright &copy; 2015 Dark Shelters | All rights reserved 
+    </div>
+  </div>
+</footer>
+</body>
+</html>

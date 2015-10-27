@@ -13,9 +13,15 @@
   <h6><%= @reading.scenario_id %></h6>
 </p>
 <p>
-  <strong>Is the Reading Complete: Y or N?</strong>
+  <strong>Select the Following Scenario: Y or N?</strong>
   <h6><%= @reading.complete %></h6>
 </p>
+ <strong>Scenario id:</strong>
+  <h6><%= @reading.scenario_id %></h6>
+</p>
+<p>
+  <strong>Select the Following Scenario: Y or N?</strong>
+  <h6><%= @reading.complete %></h6>
 <br>
 <%= link_to 'Edit Reading', edit_reading_path(@reading) %> |
 <%= link_to 'Back', readings_path %>

@@ -1,29 +1,49 @@
-<h3><i>Featured Readings</i></h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Story id</th>
-      <th>Chapter id</th>
-      <th>Scenario id</th>
-      <th>Scenario: Selected?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @readings.each do |reading| %>
-    <tr>
-      <td><%= reading.story_id %></td>
-      <td><%= reading.chapter_id %></td>
-      <td><%= reading.scenario_id %></td>
-      <td><%= reading.complete %></td>
-      <td><%= link_to 'Select Reading', reading_path(reading) %></td>
-      <td><%= link_to 'Edit Reading', edit_reading_path(reading) %></td>
-      <td><%= link_to 'Destroy Reading', reading, method: :delete %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<br>
-<p><%= link_to "Post New Reading", new_reading_path %>
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <h3><i>Featured Readings</i></h3>
+  </head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Story id:</th>
+        <th>Chapter id:</th>
+        <th>Scenario id:</th>
+        <th>Scenario: Selected?</th>
+        <th>Scenario id:</th>
+        <th>Scenario: Selected?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @readings.each do |reading| %>
+      <tr>
+        <td><%= reading.story_id %></td>
+        <td><%= reading.chapter_id %></td>
+        <td><%= reading.scenario_id %></td>
+        <td><%= reading.complete %></td>
+        <td><%= reading.scenario_id %></td>
+        <td><%= reading.complete %></td>
+        <td><%= link_to 'Select Reading', reading_path(reading) %></td>
+        <td><%= link_to 'Edit Reading', edit_reading_path(reading) %></td>
+        <td><%= link_to 'Destroy Reading', reading, method: :delete %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <p><%= link_to "Post New Reading", new_reading_path %>
+  <br>
+<footer class="page-footer #263238 blue-grey darken-4">
+    <div class="container">
+      <div class="footer-copyright">
+        Copyright &copy; 2015 Dark Shelters | All rights reserved 
+      </div>
+    </div>
+</footer>
+</body>
+</html>

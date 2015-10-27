@@ -1,9 +1,31 @@
-<h3><i>Scenarios</i></h3>
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <h3><i>Scenarios</i></h3>
 <p id="notice"><%= notice %></p>
 <p>
+  <body>
   <strong>Content:</strong>
 <h6><%= @scenario.content %></h6>
 </p>
 <br>
 <%= link_to 'Edit Scenario', edit_scenario_path(@scenario) %><br>
 <%= link_to 'Back', scenarios_path %><br>
+ <footer class="page-footer #263238 blue-grey darken-4">
+    <div class="container">
+      <div class="row"><%= link_to "Sign-up", new_user_registration_path %>
+      </div>
+      <div class="row"><%= link_to "Sign In", new_user_session_path %>
+      </div>
+      <div class="row"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      </div>
+      <div class="footer-copyright">
+        Copyright &copy; 2015 Dark Shelters | All rights reserved 
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
