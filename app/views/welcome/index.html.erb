@@ -5,19 +5,23 @@
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <div class="containter">
-      <h1 class="center-align"><tittle><i><strong>Dark Shelters</i></strong></title></h1>
-        <h5 class="center-align"><p><i>Welcome to The Interactive World of Storytelling that Brings Zombies to Life!</i></p><br>
-        <p><i>Enter if You Dare!</i></p></h5>
+      <h1 class="center-align"><font color="#b71c1c red darken-4"><tittle><i><strong>Dark Shelters</i></strong></title></font></h1>
+        <h5 class="center-align"><font color="#b71c1c red darken-4"><p><i>Welcome to The Interactive World of Storytelling that Brings Zombies to Life!</i></p><br>
+        <p><i>Enter if You Dare!</i></p></font></h5>
     </div>
-
-</head>
+  </head>
 <body>
+  <style>
+body {
+        background-image: url("http://i.ytimg.com/vi/PMpBvbA-XmU/maxresdefault.jpg");
+} 
+</style>
   <div class="container">
       <div class="col 14">
         
         <div class="row">
       
-          <div class="card-panel">
+          <div class="card-panel hoverable">
             <p class="z-depth-5"><img src="http://localhost:3000/system/stories/images/000/000/017/large/Zombie.jpg?1445981273" img width="800" height="400" style="align:middle"/></p>
           </div>
         </div>
@@ -25,24 +29,26 @@
     <div class="col 14">
       <div class="row">
 
-        <div class="card-panel">
+        <div class="card-panel hoverable">
           <p class="z-depth-5"><img src="http://localhost:3000/system/stories/images/000/000/020/large/Zombie2.jpg?1445983199" img width="800" height="400" style="align:middle"/></p>
         </div>
       </div>
     </div>
     <div class="col 14">
       <div class="row">
-        <div class="card-panel">
+        <div class="card-panel hoverable">
           <p class="z-depth-5"><img src="http://localhost:3000/system/stories/images/000/000/018/large/Zombie1.jpg?1445983139" img width="800" height="400" style="align:middle"/>
           </p>
         </div>
       </div>
     </div>
   </div>
+</div>
+  </>
   <br>
   <br>
   <br>
-<footer class="page-footer #263238 blue-grey darken-4">
+<footer class="page-footer #212121 grey darken-4">
         <div class="container">
           <div class="row"><%= link_to "Sign-up", new_user_registration_path %>
           </div>
