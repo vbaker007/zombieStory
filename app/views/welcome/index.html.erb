@@ -131,9 +131,9 @@
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text"><%= link_to "Sign-up", new_user_registration_path %></a></li>
+            <li><a class="white-text"><%= link_to "Sign In", new_user_session_path %></a></li>
+            <li><a class="white-text"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a></li>
             <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
         </div>
@@ -153,12 +153,6 @@
       Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
-<div class="row"><%= link_to "Sign-up", new_user_registration_path %>
-          </div>
-          <div class="row"><%= link_to "Sign In", new_user_session_path %>
-          </div>
-          <div class="row"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          </div>
           <div class="footer-copyright">
             Copyright &copy; 2015 Dark Shelters | All rights reserved 
           </div>
