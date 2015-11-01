@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
   <body>
+            <style> 
+                   @font-face {
+                                 font-family: myFirstFont;
+                                  src: url(sansation_light.woff);
+                              }
+                  @font-face {
+                                font-family: myFirstFont;
+                                src: url(sansation_bold.woff);
+                                font-weight: bold;
+                              }
+                        div {
+                                font-family: myFirstFont;
+                            }
+              </style>
     <h3><i>Edit Story</i></h3>
     <div class="container">
         <%= form_for @story, html: { multipart: true } do |f| %>
