@@ -1,21 +1,41 @@
-<h3><i>Edit Reading</i></h3>
-<div class="container">
-  <%= form_for @reading do |f| %>
-    <div class="field">
-      <%= f.label :story_id %><br>
-      <%= f.number_field :story_id %><br>
+<!DOCTYPE html>
+<html>
+  <body>
+            <style> 
+                @font-face {
+                              font-family: myFirstFont;
+                              src: url(sansation_light.woff);
+                            }
+                @font-face {
+                              font-family: myFirstFont;
+                              src: url(sansation_bold.woff);
+                              font-weight: bold;
+                            }
+                        div {
+                              font-family: myFirstFont;
+                            }
+              </style>
+
+      <h3><i>Edit Reading</i></h3>
+    <div class="container">
+        <%= form_for @reading do |f| %>
+      <div class="field">
+        <%= f.label :story_id %><br>
+        <%= f.number_field :story_id %><br>
+      </div>
+      <div class="field">
+        <%= f.label :chapter_id %><br>
+        <%= f.number_field :chapter_id %><br>
+      </div>
+      <div class="field">
+        <%= f.label :scenario_id %><br>
+        <%= f.number_field :scenario_id %><br>
+      </div>
+      <div class="field">
+        <%= f.radio_button :complete, 'Reading' %><br>
+      </div>
+        <%= f.submit %>
+        <% end %>
     </div>
-    <div class="field">
-      <%= f.label :chapter_id %><br>
-      <%= f.number_field :chapter_id %><br>
-    </div>
-    <div class="field">
-      <%= f.label :scenario_id %><br>
-      <%= f.number_field :scenario_id %><br>
-    </div>
-    <div class="field">
-      <%= f.radio_button :complete, 'Reading' %><br>
-    </div>
-      <%= f.submit %>
-      <% end %>
-</div>
+  </body>
+</html>    

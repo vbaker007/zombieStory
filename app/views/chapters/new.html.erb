@@ -1,10 +1,32 @@
-<h3><i>Post New Chapter</i></h3>
-<%= form_for @chapter do |f| %>
-<div class="field">
- <%= f.label :number %><br>
- <%= f.number_field :number %><br>
-</div>
- <%= f.submit %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <body>
+          <style> 
+                @font-face {
+                              font-family: myFirstFont;
+                              src: url(sansation_light.woff);
+                            }
+                @font-face {
+                              font-family: myFirstFont;
+                              src: url(sansation_bold.woff);
+                              font-weight: bold;
+                            }
+                        div {
+                              font-family: myFirstFont;
+                            }
+              </style>
+    <div class="container">
+        <h3><i>Post New Chapter</i></h3>
+        <%= form_for @chapter do |f| %>
+      <div class="field">
+        <%= f.label :number %><br>
+        <%= f.number_field :number %><br>
+      </div>
+        <%= f.submit %>
+          <% end %>
+    </div>
+  </body>
+</html>
+
 
  
