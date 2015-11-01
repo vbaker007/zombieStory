@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
@@ -24,42 +24,44 @@
                             font-family: myFirstFont;
                           }
             </style>
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>desc</th>
-          <th>Base Text</th>
-          <th colspan="3"</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @stories.each do |story| %>
-        <tr>
-          <td><strong><%= story.title %></strong></td>
-          <td><%= story.desc %></td>
-          <td><i><%= truncate(story.base_text, :length => 35) %></i></td>
-          <td><%= image_tag story.image.url(:thumb) %></td>
-          <td><%= link_to 'Read Story', story %></td>
-          <td><%= link_to 'Edit Story', edit_story_path(story) %></td>
-          <td><%= link_to 'Destroy Story', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-  <br>
-  <br>
-  <p><%= link_to 'Create Story', new_story_path %></p>
-  <br>
-  <footer class="page-footer #212121 grey darken-4">
     <div class="container">
-      <p><%= link_to 'Create Story', new_story_path %></p><br>
-      <div class="footer-copyright">
-        Copyright &copy; 2015 Dark Shelters | All rights reserved 
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>desc</th>
+            <th>Base Text</th>
+            <th colspan="3"</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @stories.each do |story| %>
+          <tr>
+            <td><strong><%= story.title %></strong></td>
+            <td><%= story.desc %></td>
+            <td><i><%= truncate(story.base_text, :length => 35) %></i></td>
+            <td><%= image_tag story.image.url(:thumb) %></td>
+            <td><%= link_to 'Read Story', story %></td>
+            <td><%= link_to 'Edit Story', edit_story_path(story) %></td>
+            <td><%= link_to 'Destroy Story', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <p><%= link_to 'Create Story', new_story_path %></p>
+      <br>
     </div>
-  </footer>
-</body>
+    <footer class="page-footer #212121 grey darken-4">
+      <div class="container">
+        <p><%= link_to 'Create Story', new_story_path %></p><br>
+        <div class="footer-copyright">
+          Copyright &copy; 2015 Dark Shelters | All rights reserved 
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
 
 

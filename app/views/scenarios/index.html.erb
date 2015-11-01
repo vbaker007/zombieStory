@@ -4,51 +4,62 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-
+              <style> 
+                   @font-face {
+                                 font-family: myFirstFont;
+                                  src: url(sansation_light.woff);
+                              }
+                  @font-face {
+                                font-family: myFirstFont;
+                                src: url(sansation_bold.woff);
+                                font-weight: bold;
+                              }
+                        div {
+                                font-family: myFirstFont;
+                            }
+              </style>
     <h3><i>Featured Scenarios</i></h3>
   </head>
   <body>
-  <table>
-    <thead>
-      <tr>
-        <th>Scenario Content</th>
-        <th colspan="3"<th>
-      </tr>
-    </thead>
-    <tbody>
-      <div class="col s12 m2">
-        <p class="z-depth-5">
-          <% @scenarios.each do |scenario| %>
-          <tr>
-            <td><i><%= truncate(scenario.content, :length => 35) %></i></td>
-            <td><%= link_to "Read Scenario", scenario %></td>
-            <td><%= link_to 'Select Scenario', scenario_path(scenario) %></td>
-            <td><%= link_to 'Edit Scenario', edit_scenario_path(scenario) %></td>
-            <td><%= link_to 'Destroy Scenario', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        </p>
-      </div>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-  <br>
-  <p><%= link_to 'Create a New Scenario', new_scenario_path %></p>
-  <br>
-
-
-
-
- <footer class="page-footer #212121 grey darken-4">
     <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Scenario Content</th>
+            <th colspan="3"<th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="col s12 m2">
+            <p class="z-depth-5">
+              <% @scenarios.each do |scenario| %>
+              <tr>
+                <td><i><%= truncate(scenario.content, :length => 35) %></i></td>
+                <td><%= link_to "Read Scenario", scenario %></td>
+                <td><%= link_to 'Select Scenario', scenario_path(scenario) %></td>
+                <td><%= link_to 'Edit Scenario', edit_scenario_path(scenario) %></td>
+                <td><%= link_to 'Destroy Scenario', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            </p>
+          </div>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <br>
       <p><%= link_to 'Create a New Scenario', new_scenario_path %></p>
       <br>
-      <div class="footer-copyright">
-        Copyright &copy; 2015 Dark Shelters | All rights reserved 
+   </div>   
+    <footer class="page-footer #212121 grey darken-4">
+      <div class="container">
+        <p><%= link_to 'Create a New Scenario', new_scenario_path %></p>
+        <br>
+        <div class="footer-copyright">
+          Copyright &copy; 2015 Dark Shelters | All rights reserved 
+        </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
 
 

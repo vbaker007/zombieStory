@@ -4,39 +4,58 @@
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
       <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+
+            <style> 
+              @font-face {
+                            font-family: myFirstFont;
+                            src: url(sansation_light.woff);
+                          }
+
+              @font-face {
+                            font-family: myFirstFont;
+                            src: url(sansation_bold.woff);
+                            font-weight: bold;
+                          }
+
+                      div {
+                            font-family: myFirstFont;
+                          }
+            </style>
       <h3><i>Featured Chapters</i></h3>
     </head>
   <body>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Chapter Number</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @chapters.each do |chapter| %>
-        <tr>
-          <td><%= chapter.number %></td>
-          <td><%= link_to 'Select Chapter', chapter_path(chapter) %></td>
-          <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
-          <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <p><%= link_to "Post New Chapter", new_chapter_path %></p>
-    <br>
-  </body>
-  <footer class="page-footer #212121 grey darken-4">
     <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Chapter Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @chapters.each do |chapter| %>
+          <tr>
+            <td><%= chapter.number %></td>
+            <td><%= link_to 'Select Chapter', chapter_path(chapter) %></td>
+            <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
+            <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <br>
       <p><%= link_to "Post New Chapter", new_chapter_path %></p>
       <br>
-      <div class="footer-copyright">
-        Copyright &copy; 2015 Dark Shelters | All rights reserved 
+    </div>  
+  
+    <footer class="page-footer #212121 grey darken-4">
+      <div class="container">
+        <p><%= link_to "Post New Chapter", new_chapter_path %></p>
+        <br>
+        <div class="footer-copyright">
+          Copyright &copy; 2015 Dark Shelters | All rights reserved 
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </body>  
 </html>
