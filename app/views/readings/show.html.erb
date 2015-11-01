@@ -1,31 +1,35 @@
-<h3><i>Readings</i></h3>
-<div class="container">
-  <p id="notice"><%= notice %></p>
-  <p>
-    <strong>Story id:</strong>
-    <h6><%= @reading.story_id %></h6>
-  </p>
-  <p>
-    <strong>Chapter id:</strong>
-    <h6><%= @reading.chapter_id %></h6>
-  </p>
-  <p>
-    <strong>Scenario id:</strong>
-    <h6><%= @reading.scenario_id %></h6>
-  </p>
-  <p>
-    <strong>Select the Following Scenario: Y or N?</strong>
-    <h6><%= @reading.complete %></h6>
-  </p>
-  <p>
-    <strong>Scenario id:</strong>
-    <h6><%= @reading.scenario_id %></h6>
-  </p>
-  <p>
-    <strong>Select the Following Scenario: Y or N?</strong>
-    <h6><%= @reading.complete %></h6>
-  </p>  
-  <br>
-  <%= link_to 'Edit Reading', edit_reading_path(@reading) %> |
-  <%= link_to 'Back', readings_path %>
-</div> 
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Story id:</strong>
+        <h6><%= @reading.story_id %></h6>
+      </p>
+      <p>
+        <strong>Chapter id:</strong>
+        <h6><%= @reading.chapter_id %></h6>
+      </p>
+      <p>
+        <strong>Scenario id:</strong>
+        <h6><%= @reading.scenario_id %></h6>
+      </p>
+      <p>
+        <strong>Select the Following Scenario: Y or N?</strong>
+        <h6><%= @reading.complete %></h6>
+      </p>
+      <p>
+        <strong>Scenario id:</strong>
+        <h6><%= @reading.scenario_id %></h6>
+      </p>
+      <p>
+        <strong>Select the Following Scenario: Y or N?</strong>
+        <h6><%= @reading.complete %></h6>
+      </p>  
+      <br>
+      <%= link_to 'Edit Reading', edit_reading_path(@reading) %> |
+      <%= link_to 'Back', readings_path %>
+    </div> 
+  </body>
+</html>
