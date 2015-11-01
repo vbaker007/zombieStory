@@ -1,21 +1,28 @@
-<h3><i>Stories</i></h3>
-<p id="notice"><%= notice %></p>
-<p>
-<strong>Title:</strong>
-  <%= @story.title %>
-</P>
-<p>
-<em>desc:</em>
-  <%= @story.desc %>
-</p>
-<p>
-  <%= image_tag @story.image.url(:large) %>
-  <%= @story.image %>
-</p>
-<p>
-  <strong>Base_text:</strong>
-<h6><%= @story.base_text %></h6>
-</p>
-<br>
-<%= link_to 'Edit Story', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="container">
+      <h3><i>Stories</i></h3>
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Title:</strong>
+        <%= @story.title %>
+      </p>
+      <p>
+        <em>desc:</em>
+        <%= @story.desc %>
+      </p>
+      <p>
+        <%= image_tag @story.image.url(:large) %>
+        <%= @story.image %>
+      </p>
+      <p>
+        <strong>Base_text:</strong>
+        <h6><%= @story.base_text %></h6>
+      </p>
+      <br>
+      <%= link_to 'Edit Story', edit_story_path(@story) %> |
+      <%= link_to 'Back', stories_path %>
+    </div>
+  </body> 
+</html>
