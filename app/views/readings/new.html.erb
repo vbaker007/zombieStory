@@ -1,47 +1,48 @@
 <h3><i>New Reading</i></h3>
-<%= form_for @reading do |f| %>
-<div class="field">
-  <%= f.label :story_id %><br>
-  <%= f.number_field :story_id %><br>
+<div class="container">
+    <%= form_for @reading do |f| %>
+  <div class="field">
+    <%= f.label :story_id %><br>
+    <%= f.number_field :story_id %><br>
+  </div>
+  <div class="field">
+    <%= f.label :chapter_id %><br>
+    <%= f.number_field :chapter_id %><br>
+  </div>
+  <div class="field">
+    <%= f.label :scenario_id %><br>
+    <%= f.number_field :scenario_id %><br>
+  </div>
+  <div class="field">
+    <form action="#">
+      <p>
+        <input name="group1" type="radio" id="test1" />
+        <label for="test1">Select Scenario: True</label>
+      </p>
+      <p>
+        <input name="group1" type="radio" id="test2" />
+        <label for="test2">Reject Secenario: False</label>
+      </p>
+    </form>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :scenario_id %><br>
+    <%= f.number_field :scenario_id %><br>
+  </div>
+  <div class="field">
+    <form action="#">
+      <p>
+        <input name="group2" type="radio" id="test3" />
+        <label for="test3">Select Scenario: True</label>
+      </p>
+      <p>
+        <input name="group2" type="radio" id="test4" />
+        <label for="test4">Reject Secenario: False</label>
+      </p>
+    </form>
+  </div>
+  <br>
+    <%= f.submit %>
+  <% end %>
 </div>
-<div class="field">
-  <%= f.label :chapter_id %><br>
-  <%= f.number_field :chapter_id %><br>
-</div>
-<div class="field">
-  <%= f.label :scenario_id %><br>
-  <%= f.number_field :scenario_id %><br>
-</div>
-<div class="field">
-  <form action="#">
-   <p>
-     <input name="group1" type="radio" id="test1" />
-     <label for="test1">Select Scenario: True</label>
-   </p>
-   <p>
-     <input name="group1" type="radio" id="test2" />
-     <label for="test2">Reject Secenario: False</label>
-   </p>
- </form>
-
-</div>
-<br>
-<div class="field">
-  <%= f.label :scenario_id %><br>
-  <%= f.number_field :scenario_id %><br>
-</div>
-<div class="field">
-  <form action="#">
-   <p>
-     <input name="group2" type="radio" id="test3" />
-     <label for="test3">Select Scenario: True</label>
-   </p>
-   <p>
-     <input name="group2" type="radio" id="test4" />
-     <label for="test4">Reject Secenario: False</label>
-   </p>
- </form>
-</div>
-<br>
-  <%= f.submit %>
-<% end %>
