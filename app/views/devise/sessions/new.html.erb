@@ -49,15 +49,14 @@
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
             <h5 class="center">Upload Avatar Image</h5>
 
-            <p class="light"> <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <p class="light"><%= form_for @user, url: session_path(resource_name), html: { multipart: true } do |f| %>
+
               <%= devise_error_messages! %><div class="form-group">
-                  <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
-                <div class="col-sm-6">
-                  <%= f.file_field :avatar %><% end %>
-                </div>
-                
-            
-              </div>
+        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-6">
+            <%= f.file_field :avatar %>
+        </div>
+  </div>
             </p>
 
           </div>
@@ -155,5 +154,5 @@
 
   </body>
 </html>
-
+<% end %>
 <%= render "devise/shared/links" %>

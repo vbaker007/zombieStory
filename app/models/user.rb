@@ -3,9 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+   
   has_many :readings
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+  
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -24,19 +27,15 @@ class User < ActiveRecord::Base
   end
 
 
-  def update_reading(story_id, chapter_id, scenario_id, complete = true || false)
-    self.readings.each do |reading|
-      reading.story_id = story_id
-      reading.chapter_id = chapter_id
-      reading.scenario_id = scenario_id
-      reading.complete = complete
-      reading.save
-    end
-  end
-
-
-
-
+  #def update_reading(story_id, chapter_id, scenario_id, complete = true || false)
+    #self.readings.each do |reading|
+    #  reading.story_id = story_id
+     # reading.chapter_id = chapter_id
+     # reading.scenario_id = scenario_id
+     # reading.complete = complete
+    # reading.save
+    #end
+  #end
 end
 
 
