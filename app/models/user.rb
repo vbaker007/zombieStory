@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
       reading.save
     end
   end
+
+
+
+
 end
 
 

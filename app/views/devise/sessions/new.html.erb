@@ -47,9 +47,18 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h5 class="center">Upload Avatar Image</h5>
 
-            <p class="light"></p>
+            <p class="light"> <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= devise_error_messages! %><div class="form-group">
+                  <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+                <div class="col-sm-6">
+                  <%= f.file_field :avatar %><% end %>
+                </div>
+                
+            
+              </div>
+            </p>
 
           </div>
         </div>

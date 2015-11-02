@@ -22,11 +22,18 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
         devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :is_female, :date_of_birth, :avatar) }
   end
-  
+
   private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
     helper_method :current_user
+ def configure_permitted_parameters
+        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password) }
+        devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :password, :remember_me) }
+        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :full_name, :description, :password, :current_password, :password_confirmation, :avatar) }
+  end
+
+
 end
