@@ -18,11 +18,26 @@
 
 </head>
 <body>
-  
+              <style>
+                          .round-image-50 {
+                                              background-color: white;
+                                              border: 1px solid #d9d9d9;
+                                              border-radius: 25px;
+                                              -moz-border-radius: 25px;
+                                              -webkit-border-radius: 25px;
+                                              height: 50px;
+                                              width: 50px;
+                                              overflow: hidden;
+                                              text-align: center;
+                                              img { width: 100% }
+                                          }
+              </style>
   <nav class="#000000 black">
     <div class="nav-wrapper">
       <a href="http://localhost:3000/" class="brand-logo"><strong><i>Dark Shelters</i></strong></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+       
       <ul class="right hide-on-med-and-down">
         <li><i><%= link_to 'Home', root_path %></i></li>
 <li><i><%= link_to 'Stories', stories_path %></i></li>
@@ -175,7 +190,35 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
+<div class="container">
+        <ul class>
+            <li><%= link_to 'Posts', '#' %></li>
+            <% if current_user %>
+            <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
 
+            <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+
+            <% else %>
+            <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
+        </ul>
+    
+<style>
+    .round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+</style>
+</div>
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
