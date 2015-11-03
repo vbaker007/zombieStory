@@ -32,13 +32,13 @@
       </div>
       <div class="field">
         <div class="form-group">
-          <p>
-            <%= f.radio_button :complete, true %><%= f.label :complete, "Select Scenario" %>
+          <p><input name="group1" id="test1" color="blue" type="radio"><%= f.radio_button :complete, true %>
+            <label for="test1"><%= f.radio_button :complete, true %><%= f.label :complete, "Select Scenario" %></label>
           </p>
           <p>
             <%= f.radio_button :complete, false %><%= f.label :complete, "Reject Scenario" %>
           </p>
-            <input name="group1" type="radio" id="test1" />
+            <input name="group1" type="radio" id="test1"><%= f.radio_button :complete, true %>>True</>
             <label for="test1">Select Scenario: True</label>
           </p>
           <p>
