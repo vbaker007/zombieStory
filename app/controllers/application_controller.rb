@@ -5,23 +5,20 @@ class ApplicationController < ActionController::Base
   #before_action :authenticate_user!
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+
   protected
-  #def create
-    #user = User.from_omniauth(env["omniauth.auth"])
-    #session[:user_id] = user.id
-    #redirect_to root_url
-  #end
-
-  #def destroy
-   # session[:user_id] = nil
-   # redirect_to root_url
-  #end
-
-
-  def configure_permitted_parameters
-        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
-        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :is_female, :date_of_birth, :avatar) }
+  def create
+    user = User.from_omniauth(env["omniauth.auth"])
+    session[:user_id] = user.id
+    redirect_to root_url
   end
+
+  def destroy
+    session[:user_id] = nil
+   redirect_to root_url
+  end
+
+
 
   private
 
@@ -30,8 +27,8 @@ class ApplicationController < ActionController::Base
   end
     helper_method :current_user
  def configure_permitted_parameters
-        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password) }
-        devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :password, :remember_me) }
+        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :avatar) }
+        devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :password, :remember_me, :avatar) }
         devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :full_name, :description, :password, :current_password, :password_confirmation, :avatar) }
   end
 

@@ -40,7 +40,7 @@
        
       <ul class="right hide-on-med-and-down">
         <% if current_user %>
-        <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb), width: '70', height: '63') %><%= @user.avatar %></li>
+        <li class="round-image-50"><%= image_tag @current_user.avatar.url(:thumb) %></li>
         <% else %>
         <li><i><%= link_to 'Login', new_user_session_path %></i></li>
         <% end %>
