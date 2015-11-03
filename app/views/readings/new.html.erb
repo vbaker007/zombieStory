@@ -31,8 +31,13 @@
         <%= f.number_field :scenario_id %><br>
       </div>
       <div class="field">
-        <form action="#">
+        <div class="form-group">
           <p>
+            <%= f.radio_button :complete, true %><%= f.label :complete, "Select Scenario" %>
+          </p>
+          <p>
+            <%= f.radio_button :complete, false %><%= f.label :complete, "Reject Scenario" %>
+          </p>
             <input name="group1" type="radio" id="test1" />
             <label for="test1">Select Scenario: True</label>
           </p>
