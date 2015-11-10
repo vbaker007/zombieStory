@@ -73,14 +73,21 @@
             <li><a class="white-text"><%= link_to "Sign-up", new_user_registration_path %></a></li>
             <li><a class="white-text"><%= link_to "Sign In", new_user_session_path %></a></li>
             <li><a class="white-text"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="white-text" href="#!"></a></li>
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+
+  <p class="alert alert-success"><%= notice %></p>
+  <p class="alert alert-danger"><%= alert %></p>
+</div></a></li>
+            <li><a class="white-text" href="#!"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></a></li>
             <li><a class="white-text" href="#!">Link 3</a></li>
             <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
@@ -195,42 +202,8 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-<div class="container">
-        <ul class>
-            <li><%= link_to 'Posts', '#' %></li>
-            <% if current_user %>
-            <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
-            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
 
-            <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
 
-            <% else %>
-            <li><%= link_to 'Login', new_user_session_path %></li>
-            <% end %>
-        </ul>
-    
-<style>
-    .round-image-50 {
-    background-color: white;
-    border: 1px solid #d9d9d9;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-    text-align: center;
-    img { width: 100% }
-}
-</style>
-</div>
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-
-<div id="status">
-</div>
-  <p class="alert alert-success"><%= notice %></p>
-  <p class="alert alert-danger"><%= alert %></p>
 </footer>
 
 </body>
