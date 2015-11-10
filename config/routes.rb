@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   get 'sessions/index'
 
   #match 'auth/:provider/callback', to:'sessions#create'
@@ -49,6 +50,17 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 #delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
 #end
   root 'welcome#index'
+
+http_path = 'welcome#index'
+css_dir = "css"
+sass_dir = "scss"
+images_dir = "images"
+javascripts_dir = "js"
+fonts_dir = "fonts"
+
+output_style = :expanded
+
+color_output = false
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

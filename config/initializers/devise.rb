@@ -17,7 +17,9 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-
+  config.secret_key = "48c4c276c72637031906623ae2012314ffbf3f6a5f4f7a71c19cd049eb45b57371619fd0be468ab8caaca44ea6a4e589ad271aac0593dba28edcb4c9f51dc1cb"
+  config.secret_key = "f02042070efc932d359f2cee80b984c731c881d7280855b60c7f564000a0004b4db82e2e03615721568d737ee3bd4c2e80455cff540f2aa34b2a3a74e9076083"
+  config.secret_key = '2e4afd95e8df4f5becdfd5eac1e50d298ce814861e484079584bc14cc6cc6e6af1e0b65a225d7b722ee49d0765d503cf3fd1929eb979cfb0183a4bd34c915cc2'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -259,4 +261,5 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  #config.secret_key = "48c4c276c72637031906623ae2012314ffbf3f6a5f4f7a71c19cd049eb45b57371619fd0be468ab8caaca44ea6a4e589ad271aac0593dba28edcb4c9f51dc1cb"
 end

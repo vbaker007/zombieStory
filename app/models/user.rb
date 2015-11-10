@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_attached_file :avatar, styles: { thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-  has_one :main_image, :class_name => "::UserImage"
-  accepts_nested_attributes_for :main_image, reject_if: :all_blank, allow_destroy: true
+ 
 
   has_many :readings
   
@@ -36,9 +35,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def input_main_image
-    self.main_image ||= self.build_main_image
-  end
+  
 
 
   #def update_reading(story_id, chapter_id, scenario_id, complete = true || false)

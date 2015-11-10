@@ -1,10 +1,19 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-gem 'devise', '~> 3.5.2'
-gem 'paperclip'
-gem 'materialize-sass'
 
+gem 'bourbon'                                                                                                  
+gem 'neat'                                                                                                     
+gem 'bitters'                                                                                                  
+gem 'refills'
+gem 'normalize-rails', '~> 3.0', '>= 3.0.3'
+gem 'devise', '~> 3.5.2'
+gem 'jcrop-rails-v2'
+#gem 'imagemagick-identify', '~> 0.0.1'
+gem 'paperclip', '~> 4.2.1'
+gem 'materialize-sass'
+gem 'simple_form'
+gem 'cocoon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
@@ -39,18 +48,27 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry'
   gem 'byebug'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda-matchers', '~> 3.0'
   gem 'simplecov'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  gem 'sqlite3'
+
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'pg', '~> 0.18.3'
+end
