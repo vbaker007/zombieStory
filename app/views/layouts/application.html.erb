@@ -3,7 +3,7 @@
 <head>
   <title>Zombiestory</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag  'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
@@ -139,7 +139,6 @@
         'into Facebook.';
     }
   }
-
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
@@ -148,7 +147,6 @@
       statusChangeCallback(response);
     });
   }
-
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '{489132971264800}',
@@ -157,7 +155,6 @@
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.5' // use version 2.2
   });
-
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
@@ -169,13 +166,10 @@
   //    your app or not.
   //
   // These three cases are handled in the callback function.
-
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
   });
-
   };
-
   // Load the SDK asynchronously
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -184,7 +178,6 @@
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
