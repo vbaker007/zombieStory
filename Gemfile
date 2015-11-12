@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-
+#gem 'kgio'
 gem 'bourbon'                                                                                                  
 gem 'neat'                                                                                                     
 gem 'bitters'                                                                                                  
@@ -70,5 +70,8 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'puma'
+  gem 'puma', '~> 2.15.3'
+  #gem 'unicorn'
+  gem 'pg', '~> 0.18.3'
+  
 end

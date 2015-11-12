@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  get 'sessions/index'
-
+  
+  #get 'sessions/index'
+   root 'welcome#index'
   #match 'auth/:provider/callback', to:'sessions#create'
   #match 'auth/failure', to: redirect('/')
   #match 'signout', to: 'sessions#destroy', as:'signout'
@@ -44,12 +44,12 @@ Rails.application.routes.draw do
         #sessions: 'users/sessions'
       #}
     # end
- 
+devise_for :admins
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # devise_for :users
 #delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
 #end
-  root 'welcome#index'
+  
 
 http_path = 'welcome#index'
 css_dir = "css"
