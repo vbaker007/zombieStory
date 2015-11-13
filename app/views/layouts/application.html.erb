@@ -37,8 +37,9 @@
       <a href="http://localhost:3000/" class="brand-logo"><strong><i>Dark Shelters</i></strong></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-       
+      
       <ul class="right hide-on-med-and-down">
+       
         <% if current_user %>
         <li class="round-image-50"><%= image_tag @current_user.avatar.url(:thumb) %></li>
         <% else %>
