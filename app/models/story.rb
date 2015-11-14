@@ -8,11 +8,10 @@ class Story < ActiveRecord::Base
     :storage => :fog,
     :fog_credentials => {
         provider: 'AWS',
-        aws_access_key_id: "AKIAI43YBAWKDLKZABOQ",
-        aws_secret_access_key: "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"
+        aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+        aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
     },
-    fog_directory: "rails-demo1-env"
-
+    fog_directory: ENV["FOG_DIRECTORY"]
   has_many :chapters
   has_many :scenarios, through: :chapters
 end
