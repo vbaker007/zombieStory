@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 #gem 'kgio'
+gem "figaro"
+gem 'aws-sdk', '~> 1.36.1'
+gem 'fog'
 gem 'bourbon'                                                                                                  
 gem 'neat'                                                                                                     
 gem 'bitters'                                                                                                  
