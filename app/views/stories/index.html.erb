@@ -5,9 +5,21 @@
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
-    <h3><i>Featured Stories</i></h3>
   </head>
   <body>
+    <!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+ <link href= "storiesindex.css" rel="stylesheet" type="text/css">
+<!-- Description -->
+<h1 class="description">
+  Featured Stories
+</h1>
+
+<!-- Table demo -->
+
+
+
+
             <style> 
               @font-face {
                             font-family: myFirstFont;
@@ -25,29 +37,31 @@
                           }
             </style>
     <div class="container">
-      <table class="z-depth-5 striped hoverable">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>desc</th>
-            <th>Base Text</th>
-            <th colspan="3"</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @stories.each do |story| %>
-          <tr>
-            <td><strong><%= story.title %></strong></td>
-            <td><%= story.desc %></td>
-            <td><i><%= truncate(story.base_text, :length => 35) %></i></td>
-            <td><%= image_tag story.image.url(:thumb) %></td>
-            <td><%= link_to 'Read Story', story %></td>
-            <td><%= link_to 'Edit Story', edit_story_path(story) %></td>
-            <td><%= link_to 'Destroy Story', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <div class="box-table">
+        <table class="z-depth-5 striped hoverable" data-fn="contacts" data-url="http://codepen.io/nakome/pen/DnEvr.js">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>desc</th>
+              <th>Base Text</th>
+              <th colspan="3"</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @stories.each do |story| %>
+            <tr>
+              <td><strong><%= story.title %></strong></td>
+              <td><%= story.desc %></td>
+              <td><i><%= truncate(story.base_text, :length => 35) %></i></td>
+              <td><%= image_tag story.image.url(:thumb) %></td>
+              <td><%= link_to 'Read Story', story %></td>
+              <td><%= link_to 'Edit Story', edit_story_path(story) %></td>
+              <td><%= link_to 'Destroy Story', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
       <br>
       <br>
       <p><%= link_to 'Create Story', new_story_path %></p>
