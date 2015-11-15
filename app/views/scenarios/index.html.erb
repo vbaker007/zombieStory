@@ -4,7 +4,17 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-              <style> 
+    <link href= "scenariosindex.css" rel="stylesheet" type="text/css">
+     <script language="javascript" type="text/javascript" src="scenariosindex.js"></script>
+<!-- Description -->
+    <h1 class="description">Featured Scenarios</h1>
+
+<!-- Table demo -->
+            <style> 
+              body{
+                      background:#424242;
+                  }
+              
                    @font-face {
                                  font-family: myFirstFont;
                                   src: url(sansation_light.woff);
@@ -18,39 +28,40 @@
                                 font-family: myFirstFont;
                             }
               </style>
-    <h3><i>Featured Scenarios</i></h3>
+    
   </head>
   <body>
     <div class="container">
-      <table class="z-depth-5 striped hoverable">
-        <thead>
-          <tr>
-            <th>Scenario Content</th>
-            <th colspan="3"<th>
-          </tr>
-        </thead>
-        <tbody>
-          <div class="col s12 m2">
-            <p class="z-depth-5">
-              <% @scenarios.each do |scenario| %>
-              <tr>
-                <td><i><%= truncate(scenario.content, :length => 35) %></i></td>
-                <td><%= link_to "Read Scenario", scenario %></td>
-                <td><%= link_to 'Select Scenario', scenario_path(scenario) %></td>
-                <td><%= link_to 'Edit Scenario', edit_scenario_path(scenario) %></td>
-                <td><%= link_to 'Destroy Scenario', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            </p>
-          </div>
-          <% end %>
-        </tbody>
-      </table>
+      <div class="box-table">
+        <table class="z-depth-5 striped hoverable" data-fn="contacts" data-url="http://codepen.io/nakome/pen/DnEvr.js">
+          <thead>
+            <tr>
+              <th>Scenario Content</th>
+              <th colspan="3"<th>
+            </tr>
+          </thead>
+          <tbody>
+            <div class="col s12 m2">
+              <p class="z-depth-5">
+                <% @scenarios.each do |scenario| %>
+                <tr>
+                  <td><i><%= truncate(scenario.content, :length => 35) %></i></td>
+                  <td><%= link_to "Read Scenario", scenario %></td>
+                  <td><%= link_to 'Select Scenario', scenario_path(scenario) %></td>
+                  <td><%= link_to 'Edit Scenario', edit_scenario_path(scenario) %></td>
+                  <td><%= link_to 'Destroy Scenario', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              </p>
+            </div>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
       <br>
       <br>
       <p><%= link_to 'Create a New Scenario', new_scenario_path %></p>
       <br>
-   </div>   
-    
+    </div>   
   </body>
 </html>
 

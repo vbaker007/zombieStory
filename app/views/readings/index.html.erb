@@ -4,10 +4,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-    <h3><i>Featured Readings</i></h3>
+    <link href= "scenariosindex.css" rel="stylesheet" type="text/css">
+     <script language="javascript" type="text/javascript" src="scenariosindex.js"></script>
+<!-- Description -->
+    <h1 class="description">Featured Readings</h1>
   </head>
 <body>
         <style> 
+                body{
+                      background:#424242;
+                    }
                 @font-face {
                               font-family: myFirstFont;
                               src: url(sansation_light.woff);
@@ -22,36 +28,38 @@
                             }
               </style>
   <div class="container">
-    <table class="z-depth-5 striped hoverable">
-      <thead>
-       <tr>
-          <th>Story id</th>
-          <th>Chapter id</th>
-          <th>Scenario id</th>
-          <th>Scenario: Selected?</th>
-          <th>Scenario id</th>
-          <th>Scenario: Selected?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @readings.each do |reading| %>
-        <tr>
-          <td><%= reading.story_id %></td>
-          <td><%= reading.chapter_id %></td>
-          <td><%= reading.scenario_id %></td>
-          <td><%= reading.complete %></td>
-          <td><%= reading.scenario_id %></td>
-          <td><%= reading.complete %></td>
-          <td><%= link_to 'Select Reading', reading_path(reading) %></td>
-          <td><%= link_to 'Edit Reading', edit_reading_path(reading) %></td>
-          <td><%= link_to 'Destroy Reading', reading, method: :delete %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <p><%= link_to "Post New Reading", new_reading_path %>
+    <div class="box-table">
+      <table class="z-depth-5 striped hoverable" data-fn="contacts" data-url="http://codepen.io/nakome/pen/DnEvr.js">
+        <thead>
+          <tr>
+            <th>Story id</th>
+            <th>Chapter id</th>
+            <th>Scenario id</th>
+            <th>Scenario: Selected?</th>
+            <th>Scenario id</th>
+            <th>Scenario: Selected?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @readings.each do |reading| %>
+          <tr>
+            <td><%= reading.story_id %></td>
+            <td><%= reading.chapter_id %></td>
+            <td><%= reading.scenario_id %></td>
+            <td><%= reading.complete %></td>
+            <td><%= reading.scenario_id %></td>
+            <td><%= reading.complete %></td>
+            <td><%= link_to 'Select Reading', reading_path(reading) %></td>
+            <td><%= link_to 'Edit Reading', edit_reading_path(reading) %></td>
+            <td><%= link_to 'Destroy Reading', reading, method: :delete %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+      <br>
+      <br>
+      <p><%= link_to "Post New Reading", new_reading_path %>
     <br>
     <br>
   </div>
