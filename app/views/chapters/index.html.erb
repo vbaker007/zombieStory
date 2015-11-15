@@ -4,8 +4,16 @@
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
       <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+      <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+      <link href= "chaptersindex.css" rel="stylesheet" type="text/css">
+      <script language="javascript" type="text/javascript" src="chaptersindex.js"></script>
+<!-- Description -->
+      <h1 class="description">Featured Chapters</h1>
 
             <style> 
+              body{
+                      background:#424242;
+                  }
               @font-face {
                             font-family: myFirstFont;
                             src: url(sansation_light.woff);
@@ -21,27 +29,28 @@
                             font-family: myFirstFont;
                           }
             </style>
-      <h3><i>Featured Chapters</i></h3>
     </head>
   <body>
     <div class="container">
-      <table class="z-depth-5 striped hoverable">
-        <thead>
-          <tr>
-            <th>Chapter Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @chapters.each do |chapter| %>
-          <tr>
-            <td><%= chapter.number %></td>
-            <td><%= link_to 'Select Chapter', chapter_path(chapter) %></td>
-            <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
-            <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <div class="box-table">
+        <table class="z-depth-5 striped hoverable" data-fn="contacts" data-url="http://codepen.io/nakome/pen/DnEvr.js">
+          <thead>
+            <tr>
+              <th>Chapter Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @chapters.each do |chapter| %>
+            <tr>
+              <td><%= chapter.number %></td>
+              <td><%= link_to 'Select Chapter', chapter_path(chapter) %></td>
+              <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
+              <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
       <br>
       <br>
       <p><%= link_to "Post New Chapter", new_chapter_path %></p>
