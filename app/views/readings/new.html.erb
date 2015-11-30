@@ -1,7 +1,233 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.css"/>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+    <link href= "editstory.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="storiesindex.js"></script>
+<!-- Description -->
+    <h1 class="description">Post Reading</h1>
+  </head>
   <body>
               <style> 
+                  body{
+                          background:#263238;
+                      }
+                  .description{
+                                font-family: 'Vollkorn', serif;
+                                text-align:center;
+                                color:#ecf0f1;
+                                text-shadow:0 0.1em 0.2em #b71c1c;
+                              }
+                   @font-face {
+                                 font-family: myFirstFont;
+                                  src: url(sansation_light.woff);
+                              }
+                  @font-face {
+                                font-family: myFirstFont;
+                                src: url(sansation_bold.woff);
+                                font-weight: bold;
+                              }
+                         div {
+                                font-family: myFirstFont;
+                              }
+          ::-webkit-scrollbar{
+                                      width:0.2em;
+                              }
+    ::-webkit-scrollbar-track{
+                                background-color:#bdc3c7;
+                              }
+    ::-webkit-scrollbar-thumb{
+                                background-color:#7f8c8d;
+                              }
+/* = table
+------------------------*/
+              .box-table table{
+                                border-collapse:collapse;
+                                text-align:left;
+                                width:100%;
+                                margin:0;
+                                padding:0;
+                                background:#7f8c8d;
+                                animation: responsive 5s infinite ease-in-out;
+                              }
+                    .box-table{
+                                font:normal 12px/150% Arial, Helvetica, sans-serif;
+                                overflow:hidden;
+                                margin:0 auto;
+                                display:block;
+                                width:95%;
+                                padding:2.5%;
+                              }
+    .box-table table thead th{
+                                background-color:#7f8c8d;
+                                color:#bdc3c7;
+                                text-align:center;
+                                padding: 0.75em;
+                                font-family: 'Vollkorn', serif;
+                                font-weight: bold;
+                                font-size: 1.5em;
+                                height: 1.5em;
+                                vertical-align: top;
+                                border-left:0.25em double #95a5a6;
+                              }
+    .box-table table tbody td,
+    .box-table table tbody tr{
+                                font-family: 'Vollkorn', serif;
+                                font-size:1em;
+                                border:none;
+                                padding:1em;
+                              }
+.box-table table tbody tr:nth-child(odd){
+                                          background:#ecf0f1;
+                                          color:#95a5a6;
+                                        }
+.box-table table tbody tr:nth-child(even){
+                                            background:#bdc3c7;
+                                            color:#7f8c8d;
+                                          }
+              .box-table table tbody tr a{
+                                            text-decoration:none;
+                                            color:#e67e22;
+                                          }
+        .box-table table tbody tr a:hover{
+                                            color:#d35400;
+                                          }
+                    .box-table .user-photo{
+                                              background:#bdc3c7;
+                                          }
+                    .box-table .user-tumb{
+                                            width:6em;
+                                            height:6em;
+                                            padding:0;
+                                            display:table-cell;
+                                            text-align:center;
+                                            margin:0 auto;
+                                            -webkit-border-radius:100%;
+                                            -moz-border-radius:100%;
+                                            border-radius:100%;
+                                          }
+
+
+/* = Responsive table
+------------------------*/
+
+/* http://elvery.net/demo/responsive-tables/  */
+@media only screen and (max-width: 800px){
+                                            .box-table table{
+                                                              width:100%;
+                                                              border-collapse:collapse;
+                                                              border-spacing:0;
+                                                            }
+                                              .box-table th,
+                                              .box-table td{
+                                                              margin:0;
+                                                              vertical-align:top;
+                                                            }
+                                              .box-table th{
+                                                              text-align:left;
+                                                            }
+                                            .box-table table{
+                                                              display:block;
+                                                              position:relative;
+                                                              width:100%;
+                                                            }
+                                            .box-table thead{
+                                                              display:block;
+                                                              float:left;
+                                                            }
+                                            .box-table tbody{
+                                                              display:block;
+                                                              width:auto;
+                                                              position:relative;
+                                                              overflow-x:auto;
+                                                              white-space:nowrap;
+                                                            }
+                                        .box-table thead tr{
+                                                              display:block;
+                                                            }
+                                              .box-table th{
+                                                              display:block;
+                                                              text-align:right;
+                                                            }
+                                        .box-table tbody tr{
+                                                              display:inline-block;
+                                                              vertical-align:top;
+                                                            }
+                                              .box-table td{
+                                                              display:block;
+                                                              min-height:1.25em;
+                                                              text-align:left;
+                                                            }
+                                              .box-table th{
+                                                              border-bottom:0;
+                                                              border-left:0;
+                                                            }
+                                              .box-table td{
+                                                              border-left:0;
+                                                              border-right:0;
+                                                              border-bottom:0;
+                                                            }
+                                            }
+/* = Error
+------------------------*/
+                              .error_table {
+                                              display: block;
+                                              background: #E05E5E;
+                                              color: #D1D1D1;
+                                              font-family: 'Vollkorn', serif;
+                                              text-align: center;
+                                              font-size: 3em;
+                                              width: 90%;
+                                              padding: 5%;
+                                            }
+/* = Loader
+------------------------*/
+                              .loading_table{
+                                              background:#d35400;
+                                              color:#ecf0f1;
+                                              font-family: 'Vollkorn', serif;
+                                              text-align: center;
+                                              font-size: 1em;
+                                              width: 0;
+                                              display: block;
+                                              overflow: hidden;
+                                              height: 1em;
+                                              padding:0.5em;
+                                              animation: table_loader 10s infinite ease;
+                                            }
+                                              @keyframes table_loader{50%{width:100%}}
+                                              @-webkit-keyframes table_loader{50%{width:100%}}
+                                              @-moz-keyframes table_loader{50%{width:100%}}
+                                              @-ms-keyframes table_loader{50%{width:100%}}
+                                              @-o-keyframes table_loader{ 50%{width:100%}}
+                   @font-face {
+                                 font-family: myFirstFont;
+                                  src: url(sansation_light.woff);
+                              }
+                  @font-face {
+                                font-family: myFirstFont;
+                                src: url(sansation_bold.woff);
+                                font-weight: bold;
+                              }
+                        div {
+                                font-family: myFirstFont;
+                            }
+                   @font-face {
+                                 font-family: myFirstFont;
+                                  src: url(sansation_light.woff);
+                              }
+                  @font-face {
+                                font-family: myFirstFont;
+                                src: url(sansation_bold.woff);
+                                font-weight: bold;
+                              }
+                        div {
+                                font-family: myFirstFont;
+                            }
+              
                    @font-face {
                                  font-family: myFirstFont;
                                   src: url(sansation_light.woff);
@@ -15,65 +241,89 @@
                                 font-family: myFirstFont;
                             }
               </style>
-      <h3><i>New Reading</i></h3>
-    <div class="z-depth-5 container hoverable">
-          <%= form_for @reading do |f| %>
-      <div class="field">
-        <%= f.label :story_id %><br>
-        <%= f.number_field :story_id %><br>
-      </div>
-      <div class="field">
-        <%= f.label :chapter_id %><br>
-        <%= f.number_field :chapter_id %><br>
-      </div>
-      <div class="field">
-        <%= f.label :scenario_id %><br>
-        <%= f.number_field :scenario_id %><br>
-      </div>
-      <div class="field">
-        <p>
-          <b>Scenario Selected?<br />
-            <%= f.radio_button :complete, 'True' %>True<br />
-            <%= f.radio_button :complete, 'False' %>False<br />
-        </p>
-
-        <div class="form-group">
-          <p><input name="group1" id="test1" color="blue" type="radio"><%= f.radio_button :complete, true %>
-            <label for="test1"><%= f.radio_button :complete, true %><%= f.label :complete, "Select Scenario" %></label>
-          </p>
-          <p>
-            <%= f.radio_button :complete, false %><%= f.label :complete, "Reject Scenario" %>
-          </p>
-            <input name="group1" type="radio" id="test1"><%= f.radio_button :complete, true %>>True</>
-            <label for="test1">Select Scenario: True</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="test2" />
-            <label for="test2">Reject Secenario: False</label>
-          </p>
-        </form>
-      </div>
-      <br>
-      <div class="field">
-        <%= f.label :scenario_id %><br>
-        <%= f.number_field :scenario_id %><br>
-      </div>
-      <div class="field">
-        <form action="#">
-          <p>
-            <input id="complete_True" type="radio" name="True[complete]" value="True"/>
-            <label for="True[complete]">True</label>
-          </p>
-          <p>
-            <input name="group2" type="radio" id="test4" />
-            <label for="test4">Reject Secenario: False</label>
-           
-          </p>
-        </form>
-      </div>
-      <br>
-        <%= f.submit %>
-        <% end %>
+    <div class="box-table">
+      <table class="z-depth-5 container hoverable" data-fn="contacts" data-url="http://codepen.io/nakome/pen/DnEvr.js">
+        <thead>
+          <tr>
+            <th>Story id</th>
+            <th>Chapter id</th>
+            <th>Scenario id</th>
+            <th>Select the following Scenario id: Y or N?</th>
+            <th>Scenario id</th>
+            <th>Select the following Scenario id: Y or N?</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <%= form_for @reading do |f| %>
+          <tr>
+            <td>
+              <div class="field">
+                <%= f.label :story_id %><br>
+                <%= f.number_field :story_id %><br>
+              </div>
+            </td>
+            <td>
+              <div class="field">
+                <%= f.label :chapter_id %><br>
+                <%= f.number_field :chapter_id %><br>
+              </div>
+            </td>
+            <td>
+              <div class="field">
+                <%= f.label :scenario_id %><br>
+                <%= f.number_field :scenario_id %><br>
+              </div>
+            </td>
+            <td>
+              <div class="field">
+                <p>
+                  <b>Scenario Selected?<br />
+                  <%= f.radio_button :complete, 'True' %>True<br />
+                  <%= f.radio_button :complete, 'False' %>False<br />
+                </p>
+                <div class="form-group">
+                  <p><input name="group1" id="test1" color="blue" type="radio"><%= f.radio_button :complete, true %>
+                    <label for="test1"><%= f.radio_button :complete, true %><%= f.label :complete, "Select Scenario" %></label>
+                  </p>
+                  <p>
+                    <%= f.radio_button :complete, false %><%= f.label :complete, "Reject Scenario" %>
+                  </p>
+                  <input name="group1" type="radio" id="test1"><%= f.radio_button :complete, true %>>True</>
+                  <label for="test1">Select Scenario: True</label>
+                  </p>
+                  <p>
+                    <input name="group1" type="radio" id="test2" />
+                    <label for="test2">Reject Secenario: False</label>
+                  </p>
+                  </form>
+                </div>
+              </td>
+              <td>
+                <div class="field">
+                  <%= f.label :scenario_id %><br>
+                  <%= f.number_field :scenario_id %><br>
+                </div>
+              </td>
+              <td>
+                <div class="field">
+                  <form action="#">
+                    <p>
+                      <input id="complete_True" type="radio" name="True[complete]" value="True"/>
+                      <label for="True[complete]">True</label>
+                    </p>
+                    <p>
+                      <input name="group2" type="radio" id="test4" />
+                      <label for="test4">Reject Secenario: False</label>
+                    </p>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+          <%= f.submit %>
+                <% end %>
     </div>
   </body>
 </html>    

@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :chapters
   resources :scenarios
   resources :readings
+
+get 'auth/:provider/callback', to: 'sessions#create'
+get 'auth/failure', to: redirect('/')
+get 'signout', to: 'sessions#destroy', as: 'signout'
   #get 'readings/index'
 
   #get 'readings/show'

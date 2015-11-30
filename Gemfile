@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 #gem 'kgio'
-gem "figaro"
+
+gem 'figaro',  '~> 0.7'
 gem 'aws-sdk', '~> 1.36.1'
 gem 'fog'
 gem 'bourbon'                                                                                                  
@@ -49,6 +50,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'omniauth-facebook'
 gem 'omniauth'
+gem "koala", "~> 2.2"
+gem 'curl', '~> 0.0.9'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'

@@ -5190,7 +5190,6 @@ DatePicker.prototype.validate = function( type, dateObject, options ) {
             // Return only integers for enabled weekdays.
             return _.isInteger( value )
         }).length/*,
-
         safety = 100*/
 
 

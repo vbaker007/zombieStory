@@ -1,4 +1,6 @@
 class ReadingsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :is_user?, only: [:edit, :update, :delete]
   before_action :find_reading, only: [:show, :edit, :update, :destroy]
   def index
     @readings = Reading.all.order("created_at DESC")

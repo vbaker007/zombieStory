@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
   <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
+  <meta property="og:url" content="http://darkshelters.herokuapp.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dark Shelters" />
+    <meta property="og:description" content="Welcome to Dark Shelters, an interactive storytelling forum for zombie lovers!" />
+    <meta property="og:image"         content="http://darkshelters.herokuapp.com/stories/new/image.jpg" />
+<meta property="og:type" content="game">
+<meta property="og:type" content="darkshelters:story">
 
 <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
@@ -34,7 +41,7 @@
               </style>
   <nav class="#000000 black">
     <div class="nav-wrapper">
-      <a href="http://localhost:3000/" class="brand-logo"><strong><i>Dark Shelters</i></strong></a>
+      <a href="http://darkshelters.herokuapp.com/" class="brand-logo"><strong><i>Dark Shelters</i></strong></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
       
@@ -89,7 +96,17 @@
   <p class="alert alert-danger"><%= alert %></p>
 </div></a></li>
             <li><a class="white-text" href="#!"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">
+             <div class="fb-like" data-href="http://darkshelters.herokuapp.com/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</div></a></li>
+            <li><a class="white-text" href="#!"><div id="user_nav">
+  <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <% end %>
+</div></a></li>
             <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
         </div>

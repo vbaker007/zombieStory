@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20151106020751) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    #t.string   "oauth_expires_at"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
