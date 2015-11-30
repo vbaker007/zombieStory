@@ -1,2 +1,1 @@
-$(document).ready ->
-$('.dropdown-button').dropdown()
+$(document).ready -> $('.dropdown-button').dropdown()
