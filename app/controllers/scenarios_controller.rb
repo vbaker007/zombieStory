@@ -3,6 +3,7 @@ class ScenariosController < ApplicationController
 
   def index
     @scenarios = Scenario.all.order("created_at DESC")
+    @scenario_id = @chapters[0]
   end
 
   def show

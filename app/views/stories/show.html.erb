@@ -234,6 +234,9 @@
             <h6><%= @story.base_text %></h6>
           </p>
         </font>
+        <ul>
+          <li>< link_to chapter.number, reading_story_chapter_path(@story) %></li>
+        </ul>
           <br>
             <%= link_to 'Edit Story', edit_story_path(@story) %> |
             <%= link_to 'Back', stories_path %>
