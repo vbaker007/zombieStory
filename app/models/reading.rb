@@ -11,7 +11,7 @@ class Reading < ActiveRecord::Base
   end
 
   def select_scenario(scenario_id)
-    puts @scenario_id == @complete 
+   @scenario_id == @complete 
     if @scenario_id == true
       puts "You've selected #{@scenario_id}"
     else @scenario_id == false

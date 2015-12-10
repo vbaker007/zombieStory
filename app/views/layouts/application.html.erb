@@ -53,10 +53,10 @@
         <li><i><%= link_to 'Login', new_user_session_path %></i></li>
         <% end %>
         <li><i><%= link_to 'Home', root_path %></i></li>
-        <li><i><%= link_to 'Stories', reading_stories_path %></i></li>
-        <li><i><%= link_to 'Chapters', reading_story_chapters_path %></i></li>
-        <li><i><%= link_to 'Scenarios', reading_story_chapter_scenarios_path %></i></li>
-        <li><i><%= link_to 'Readings', readings_path %></i></li>
+        <li><i><%= link_to 'Stories', stories_path %></i></li>
+        <li><i><%= link_to 'Chapters', story_reading_chapters_path %></i></li>
+        <li><i><%= link_to 'Scenarios', story_reading_chapter_scenarios_path %></i></li>
+        <li><i><%= link_to 'Readings', story_readings_path %></i></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <%= link_to 'Home', root_path %> 
