@@ -238,8 +238,10 @@
             <% @chapters.each do |chapter| %>
             <tr>
               <td><%= chapter.number %></td>
-              <td><%= link_to 'Select Chapter', chapter_path(chapter) %></td>
-              <td><%= link_to 'Edit Chapter', edit_chapter_path(chapter) %></td>
+              <td><%= chapter.story_id %></td>
+              <td><%= chapter.reading_id %></td>
+              <td><%= link_to 'Select Chapter', story_reading_chapter_path(@chapter) %></td>
+              <td><%= link_to 'Edit Chapter', edit_story_reading_chapter_path(@chapter) %></td>
               <td><%= link_to 'Destroy Chapter', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
             <% end %>
@@ -248,7 +250,7 @@
       </div>
       <br>
       <br>
-      <p><%= link_to "Post New Chapter", new_chapter_path %></p>
+      <p><%= link_to "Post New Chapter", new_story_reading_chapter_path %></p>
       <br>
     </div>  
   

@@ -2,9 +2,16 @@ class ChaptersController < ApplicationController
   before_action :find_chapter, only: [:show, :edit, :update, :destroy]
     def index
       @chapters = Chapter.all.order("created_at DESC")
-    end
-
+      @reading_id.chapter = @chapters
+      @story_id.chapter = @chapters
+    #end
     def show
+   @chapters = Listing.where(subcategory_id: params[:id]).order("created_at DESC")
+   @story = Story.find(params[:title])
+   @scenatios = Scenarios.find(params[:id])
+  end
+    def show
+      
     end
 
     def new
@@ -12,6 +19,7 @@ class ChaptersController < ApplicationController
     end
 
     def create
+      @chapter = @story.chapters.create(order_date: Time.now)
       @chapter = Chapter.new(chapter_params)
       if @chapter.save 
         redirect_to @chapter
@@ -43,11 +51,15 @@ class ChaptersController < ApplicationController
     end
 
     def chapter_params
-      params.require(:chapter).permit(:number)
+      params.require(:chapter).permit(:number, :story_id, :reading_id)
     end
   
 end
-
+  def show
+   @listings = Listing.where(subcategory_id: params[:id]).order("created_at DESC")
+   @category = Category.find(params[:category_id])
+   @subcategory = Subcategory.find(params[:id])
+  end
 
 
 

@@ -6,10 +6,15 @@ Rails.application.routes.draw do
   #match 'auth/failure', to: redirect('/')
   #match 'signout', to: 'sessions#destroy', as:'signout'
   
-  resources :stories
-  resources :chapters
-  resources :scenarios
+  #resources :stories
+  #resources :chapters
+  #resources :scenarios
   resources :readings
+  resources :stories 
+  resources :chapters do
+    resources :scenarios 
+   end
+      
 
 get 'auth/:provider/callback', to: 'sessions#create'
 get 'auth/failure', to: redirect('/')

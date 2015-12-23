@@ -2,6 +2,7 @@ class StoriesController < ApplicationController
   before_action :find_story, only: [:show, :edit, :update, :destroy]
   def index
     @stories = Story.all.order("created_at DESC")
+    @chapter_id = @stories
   end
 
   def show
